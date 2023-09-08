@@ -8,7 +8,7 @@ displayDetailed: true
 displayAttached: true
 displayExpanded: false
 dashboardConfig:
-  title: Cucumber PDF Report
+  title: Operating Room Procedures Bug Report
   dataBackgroundColor: 4F0CC8
   titleColor: FF0000
   dateColor: 969696
