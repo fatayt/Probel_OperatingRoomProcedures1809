@@ -85,6 +85,8 @@
                         <include>**/Runner*.java</include>
                         <include>**/*FailedTestRunner.java</include>
                     </includes>
+                    <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
+                    <reportNameSuffix>Isteyin Yeter</reportNameSuffix>
                 </configuration>
             </plugin>
 
