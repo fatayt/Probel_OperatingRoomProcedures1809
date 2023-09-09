@@ -106,6 +106,7 @@
                     <extentPropertiesDirectory>${}</extentPropertiesDirectory>
                     <displayAllHooks>false</displayAllHooks>
                     <strictCucumber6Behavior>true</strictCucumber6Behavior>
+                    <reportTitle>My Cucumber Report</reportTitle>
                 </configuration>
             </plugin>
             <plugin>
