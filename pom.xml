@@ -106,7 +106,6 @@
                     <extentPropertiesDirectory>${}</extentPropertiesDirectory>
                     <displayAllHooks>false</displayAllHooks>
                     <strictCucumber6Behavior>true</strictCucumber6Behavior>
-                    <reportTitle>Isteyin Yeter</reportTitle>
                 </configuration>
             </plugin>
             <plugin>
