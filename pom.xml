@@ -87,7 +87,6 @@
                     </includes>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>tech.grasshopper</groupId>
                 <artifactId>extentreports-cucumberjson-plugin</artifactId>
