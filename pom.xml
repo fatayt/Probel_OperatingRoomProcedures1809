@@ -105,7 +105,6 @@
                     <extentPropertiesDirectory>${}</extentPropertiesDirectory>
                     <displayAllHooks>false</displayAllHooks>
                     <strictCucumber6Behavior>true</strictCucumber6Behavior>
-                    <title>X Files Report</title>
                 </configuration>
             </plugin>
             <plugin>
