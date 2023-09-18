@@ -27,15 +27,17 @@ public class OperatingRoomProcedures_StepDefinitions {
 
     @Given("User enters date")
     public void user_enters_date() throws InterruptedException {
+       Thread.sleep(2000);
+       operatingRoomProcedures_page_.requestDate.click();
         Thread.sleep(2000);
-        operatingRoomProcedures_page_.requestDate.click();
         operatingRoomProcedures_page_.requestDate.sendKeys("15.09.2023");
         Thread.sleep(2000);
 
     }
 
-    @Given("User clicks the refresh button")
-    public void user_clicks_the_refresh_button() throws InterruptedException {
+
+    @Given(" The User clicks the refresh button")
+    public void Theuser_clicks_the_refresh_button() throws InterruptedException {
         operatingRoomProcedures_page_.refreshButton.click();
         Thread.sleep(1000);
 
@@ -52,14 +54,16 @@ public class OperatingRoomProcedures_StepDefinitions {
     @Given("User selects patient")
     public void user_selects_patient() throws InterruptedException {
         Thread.sleep(1000);
-        operatingRoomProcedures_page_.protocolNo.click();
+        operatingRoomProcedures_page_.selectPatient.click();
         Thread.sleep(1000);
+
+
 
     }
 
     @Given("User clicks on salon operations")
     public void user_clicks_on_salon_operations() throws InterruptedException {
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         operatingRoomProcedures_page_.HallOperations.click();
         Thread.sleep(1000);
 
@@ -150,11 +154,13 @@ public class OperatingRoomProcedures_StepDefinitions {
 
     @Given("user finds patient with protocol number")
     public void user_finds_patient_with_protocol_number() throws InterruptedException {
-
-        operatingRoomProcedures_page_.protocolSearch.click();
-        operatingRoomProcedures_page_.protocolSearch.sendKeys("15384267");
         Thread.sleep(1000);
+        operatingRoomProcedures_page_.protocolSearch.click();
+        Thread.sleep(1000);
+        operatingRoomProcedures_page_.protocolSearch.sendKeys("15384267");
+        Thread.sleep(2000);
         operatingRoomProcedures_page_.findPatient.click();
+        Thread.sleep(2000);
 
     }
 /*
@@ -171,7 +177,8 @@ public class OperatingRoomProcedures_StepDefinitions {
 
 
     @Given("User clicks on the surgery details button")
-    public void user_clicks_on_the_surgery_details_button() {
+    public void user_clicks_on_the_surgery_details_button() throws InterruptedException {
+        Thread.sleep(1000);
         operatingRoomProcedures_page_.operationDetails.click();
     }
 
@@ -224,9 +231,6 @@ public class OperatingRoomProcedures_StepDefinitions {
         operatingRoomProcedures_page_.DoYouWantToContinuePopupYESbutton.click();
         Thread.sleep(1000);
 
-        actions.sendKeys(Keys.PAGE_UP).perform();
-
-        Thread.sleep(1000);
 
 
     }
@@ -299,12 +303,7 @@ public class OperatingRoomProcedures_StepDefinitions {
         operatingRoomProcedures_page_.popup1addPatientListButton.click();
     }
 
-    @Given("User clicks the POstop button")
-    public void user_clicks_the_p_ostop_button() throws InterruptedException {
-        operatingRoomProcedures_page_.POstopButton.click();
-        Thread.sleep(1000);
 
-    }
 
     @Given("User enter data POstop page")
     public void user_enter_data_p_ostop_page() throws InterruptedException {
@@ -437,4 +436,13 @@ public class OperatingRoomProcedures_StepDefinitions {
         Thread.sleep(2000);
 
     }
+
+
+    @Given("User selects patient ilyas")
+    public void userSelectsPatientIlyas() {
+        operatingRoomProcedures_page_.selectilyas.click();
+    }
 }
+
+
+

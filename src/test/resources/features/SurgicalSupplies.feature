@@ -1,59 +1,64 @@
 @SurgicalSupplies
-
+@Regression
 Feature: Surgery Appointment
 
   Background:
     Given The user logs in
     And The user goes Surgical Supplies page
 
-  @Smoke @selectTemplate @TC0084 @US_012
-  Scenario: User can add the material and medicine to surgery from template
+  @Smoke @TC0084 @TC0085 @US_012
+  Scenario: TC0084 TC0085 User can add delete the material and medicine to surgery from template
     When select the surgery date "11.09.2023"
     And click refresh button
     And click saloon
     And click refresh button
     And select patient
+
+    And if material displayed delete the material "2168"
+    And if material displayed delete the material "3901"
+    And if medicine displayed delete the medicine "27233"
+    And if medicine displayed delete the medicine "33568"
+
     And click apply template
-    And click template code "2"
+    And click template name "Deneme"
+
     And click approve box for materials
-    And click approve box for medicine
     And click materials process and update button
     And assert the popup message "Hastaya Onaylanmış Olan Malzemeler İşlenecek"
     And click yes button
     And assert the popup message "Malzeme işlenemedi"
     And click okey button
+
+    And click approve box for medicine
     And click medicine process and update button
     And assert the popup message "Hastaya Onaylanmış Olan İlaçlar İşlenecek"
     And click yes button
     And assert the popup message "İlaç işlenemedi"
     And click okey button
 
-  @Smoke @deleteSupply @TC0085 @US_012
-  Scenario: User can delete the material and medicine from surgery from template
-    When select the surgery date "11.09.2023"
-    And click refresh button
-    And click saloon
-    And click refresh button
-    And select patient
     And delete the material "2168"
     And assert the popup message "Silmek İstediğinize Emin misiniz?"
     And click yes button
     And assert the material or medicine deleted "2168"
+
     And delete the material "3901"
     And assert the popup message "Silmek İstediğinize Emin misiniz?"
     And click yes button
     And assert the material or medicine deleted "3901"
-    And delete the medicine "33568"
-    And assert the popup message "Silmek İstediğinize Emin misiniz?"
-    And click yes button
-    And assert the material or medicine deleted "33568"
+
     And delete the medicine "27233"
     And assert the popup message "Silmek İstediğinize Emin misiniz?"
     And click yes button
     And assert the material or medicine deleted "27233"
 
-  @Bug @addMaterials @TC0086 @US_012
-  Scenario: User can select and add the materials from stock list
+    And delete the medicine "33568"
+    And assert the popup message "Silmek İstediğinize Emin misiniz?"
+    And click yes button
+    And assert the material or medicine deleted "33568"
+
+
+  @Bug @TC0086 @US_012
+  Scenario: TC0086 User can select and add the materials from stock list
     When select the surgery date "11.09.2023"
     And click refresh button
     And click saloon
@@ -97,10 +102,39 @@ Feature: Surgery Appointment
     And close the warning message
 
 
-  @Bug @templateProcess @TC0087 @US_012
-  Scenario: User can create, edit and delete the template materials
+  @Bug @TC0087 @US_012
+  Scenario: TC0087 User can create, edit and delete the template materials
     When click template definitions button
     And assert popup page "Ameliyat Malzeme Şablon Tanımları"
+
+    And click new template add button
+    And select type of template "Cerrahi"
+    And enter template name "Test Abeyis"
+    And enter branch code to branch box "3"
+    And double click examination name box
+    And enter code to official code box "G100040"
+    And click save button
+    Then assert new template by name "Test Abeyis"
+
+    And click new template add button
+    And select type of template "Cerrahi"
+    And enter template name "Test Abeyis"
+    And enter branch code to branch box "3"
+    And double click examination name box
+    And enter code to official code box "G100040"
+    And click save button
+    Then assert new template by name "Test Abeyis"
+
+    And enter template name to name search box "Test Abeyis"
+    Then assert new template by name "Test Abeyis"
+    When click delete button
+    And click yes button
+
+    And enter template name to name search box "Test Abeyis"
+    Then assert new template by name "Test Abeyis"
+    When click delete button
+    And click yes button
+
     And click new template add button
     And select type of template "Anestezi"
     And enter template name "Abeyis Test"
@@ -108,8 +142,9 @@ Feature: Surgery Appointment
     And double click examination name box
     And enter code to official code box "S100021"
     And click save button
-    Then assert new template by name "Abeyis Test"
     And enter template name to name search box "Abeyis Test"
+    Then assert new template by name "Abeyis Test"
+    #And enter template name to name search box "Abeyis Test"
     When click edit button
     And select type of template "Cerrahi"
     And clear template name
@@ -124,9 +159,3 @@ Feature: Surgery Appointment
     And assert the popup message "Bu kaydı silmek istediğinize emin misiniz?"
     And click yes button
     Then assert the template deleted "Abeyis Automation Test"
-
-
-
-
-
-
