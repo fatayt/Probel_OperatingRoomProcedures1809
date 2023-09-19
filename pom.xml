@@ -15,42 +15,19 @@
     </properties>
 
     <dependencies>
+<dependency>
+    <groupId>org.jenkins-ci.plugins</groupId>
+    <artifactId>apache-httpcomponents-client-4-api</artifactId>
+  </dependency>
+  <dependency>
+    <artifactId>somelibrary-using-httpclient</artifactId>
+    <version>1.0.0</version>
+  </dependency>
+  <dependency>
+    <artifactId>anotherlibrary-using-httpclient</artifactId>
+    <version>1.0.0</version>
+  </dependency>
 
- <dependency>
-    <groupId>org.jenkins-ci.plugins</groupId>
-    <artifactId>apache-httpcomponents-client-4-api</artifactId>
-  </dependency>
-  <dependency>
-    <artifactId>somelibrary-using-httpclient</artifactId>
-    <version>1.0.0</version>
-  </dependency>
-  <dependency>
-    <artifactId>anotherlibrary-using-httpclient</artifactId>
-    <version>1.0.0</version>
-  </dependency> <dependency>
-    <groupId>org.jenkins-ci.plugins</groupId>
-    <artifactId>apache-httpcomponents-client-4-api</artifactId>
-  </dependency>
-  <dependency>
-    <artifactId>somelibrary-using-httpclient</artifactId>
-    <version>1.0.0</version>
-  </dependency>
-  <dependency>
-    <artifactId>anotherlibrary-using-httpclient</artifactId>
-    <version>1.0.0</version>
-  </dependency>
-              <dependency>
-    <groupId>org.jenkins-ci.plugins</groupId>
-    <artifactId>apache-httpcomponents-client-4-api</artifactId>
-  </dependency>
-  <dependency>
-    <artifactId>somelibrary-using-httpclient</artifactId>
-    <version>1.0.0</version>
-  </dependency>
-  <dependency>
-    <artifactId>anotherlibrary-using-httpclient</artifactId>
-    <version>1.0.0</version>
-  </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
