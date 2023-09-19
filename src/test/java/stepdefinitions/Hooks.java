@@ -20,6 +20,7 @@ public class Hooks {
 
         Driver.getDriver().manage().window().maximize();
         Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        Driver.getDriver().get(ConfigReader.getProperty("probel_WebUrl"));
         System.out.println("scenario name =" + scenario.getName());
 
 
